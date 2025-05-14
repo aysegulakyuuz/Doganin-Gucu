@@ -1,40 +1,40 @@
-🌿 Doğanın Gücü – Proje Özeti
-🎯 Proje Amacı
-Bu proje, Madrid bölgesinde 2015-2018 yılları arasında kaydedilen hava durumu verileri ile enerji üretimi verilerini birleştirerek, hava koşullarının enerji üretimine olan etkisini analiz etmeyi amaçlamaktadır. Hangi hava durumu faktörlerinin enerji üretiminde ne ölçüde belirleyici olduğu araştırılmıştır.
+🌿 The Power of Nature - Project Summary
+🎯 Project Objective
+This project aims to analyze the impact of weather conditions on energy production by combining weather data and energy production data recorded in the Madrid region between 2015 and 2018. The extent to which weather factors are determinants of energy production is investigated.
 
-🔍 Veri Seti
-Kaynaklar: Yenilenebilir (güneş, rüzgar, hidro) ve fosil enerji üretimi verileri
+🔍 Dataset
+Sources: Renewable (solar, wind, hydro) and fossil energy production data
 
-Hava durumu değişkenleri: Sıcaklık, rüzgar hızı, nem, bulutluluk, yağmur gibi faktörler
+Weather variables: Factors such as temperature, wind speed, humidity, cloudiness, rain
 
-Gözlem sayısı: ~35.000
+Number of observations: ~35.000
 
-Zaman aralığı: 2015–2018
+Time span: 2015-2018
 
-🛠️ Yapılan Çalışmalar
-Keşifsel Veri Analizi (EDA)
+🛠️ Studies
+Exploratory Data Analysis (EDA)
 
-Zaman serisi grafikleri ve eksik/veri aykırı kontrolleri yapıldı.
+Time series graphs and missing/data outlier checks were performed.
 
-Özellik Mühendisliği
+Feature Engineering
 
-20’den fazla yeni değişken oluşturuldu (ör. NEW_TempRenewableImpact, NEW_WeatherImpactOnEnergy).
+More than 20 new variables created (ör. NEW_TempRenewableImpact, NEW_WeatherImpactOnEnergy).
 
-Modelleme
+Modeling
 
-Hedef değişken: total_generation (toplam enerji üretimi)
+Target variable: total_generation (total energy production)
 
-Kullanılan modeller:
+Models used:
 
-Lasso (RMSE: 32.6 – En iyi sonuç)
+Lasso (RMSE: 32.6 – Best result)
 
 Ridge, LinearRegression
 
 CatBoost, LightGBM, RandomForest, XGBoost
 
-Hiperparametre optimizasyonları yapıldı (RandomizedSearchCV ile)
+Hyperparameter optimizations were made (RandomizedSearchCV ile)
 
-Model Performansı
+Model Performance
 
 Lasso: RMSE 32.6, MAE 18.7
 
@@ -44,22 +44,22 @@ LightGBM: RMSE 104.1, MAE 71.2
 
 RandomForest: RMSE 330.4, MAE 246.2
 
-Korelasyon Analizleri ve Görselleştirmeler
+Correlation Analysis and Visualizations
 
-Hava koşullarının enerji kaynakları üzerindeki etkisi detaylı analizlerle görselleştirildi (boxplot, scatter, heatmap, barplot).
+The impact of weather conditions on energy resources visualized with detailed analysis (boxplot, scatter, heatmap, barplot).
 
-💡 Ana Bulgular
-Rüzgar hızı ve sıcaklık, yenilenebilir enerji üretiminde oldukça etkili.
+💡 Main Findings
+Wind speed and temperature are highly influential in renewable energy production.
 
-Bulutluluk, güneş enerjisini negatif etkiliyor; rüzgar enerjisini ise pozitif etkileyebilir.
+Cloudiness negatively affects solar energy, but can positively affect wind energy.
 
-Yağmur, güneş üretimini düşürürken bazı durumlarda rüzgar üretimini arttırabiliyor.
+Rain decreases solar production, while in some cases it can increase wind production.
 
-En iyi tahmin performansı Lasso Regresyon modelinden elde edildi.
+The best prediction performance was obtained from the Lasso Regression model.
 
-📌 İş Önerileri
-Enerji yönetimi, hava durumu tahminleriyle desteklenmeli.
+📌 Business Recommendations
+Energy management should be supported by weather forecasts.
 
-Bulutlu ve yağmurlu günlerde güneş yerine rüzgar veya hidro gibi kaynaklara ağırlık verilmeli.
+On cloudy and rainy days, wind or hydro resources should be used instead of solar.
 
-Zaman bazlı (mevsimsel, saatlik) üretim tahminleriyle optimizasyon sistemleri geliştirilebilir.
+Optimization systems can be developed with time-based (seasonal, hourly) production forecasts.
